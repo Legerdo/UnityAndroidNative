@@ -12,6 +12,7 @@ public class NewBehaviourScript : MonoBehaviour
     private AndroidJavaClass javaClass = null;
     private AndroidJavaObject javaClassInstance = null;
 
+
     void Start()
     {
         #if UNITY_ANDROID && !UNITY_EDITOR
