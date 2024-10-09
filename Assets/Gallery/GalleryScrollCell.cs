@@ -11,6 +11,8 @@ public class GalleryScrollCell : MonoBehaviour
     private CancellationTokenSource cancellationTokenSource;
     private int currentIndex; // 현재 셀의 인덱스 저장
 
+    private string imagePath = "";
+
     // ScrollCellIndex 메서드를 통해 셀의 데이터를 설정
     public void ScrollCellIndex(int idx)
     {
@@ -20,7 +22,7 @@ public class GalleryScrollCell : MonoBehaviour
         cancellationTokenSource?.Cancel();
         cancellationTokenSource = new CancellationTokenSource();
 
-        string imagePath = GalleryScrollManager.Instance.GetImagePath(idx);
+        imagePath = GalleryScrollManager.Instance.GetImagePath(idx);
 
         gameObject.name = idx.ToString();
 
@@ -68,6 +70,8 @@ public class GalleryScrollCell : MonoBehaviour
         }
 
         image.texture = null;
+
+        imagePath = "";
 
         loadingObject?.SetActive(true);
 

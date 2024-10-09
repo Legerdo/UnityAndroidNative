@@ -8,10 +8,8 @@ using UnityEngine.Networking;
 
 [RequireComponent(typeof(UnityEngine.UI.LoopScrollRect))]
 [DisallowMultipleComponent]
-public class GalleryScrollManager : MonoBehaviour, LoopScrollPrefabSource, LoopScrollDataSource
+public class GalleryScrollManager : SingletonMonoBehaviour<GalleryScrollManager>, LoopScrollPrefabSource, LoopScrollDataSource
 {
-    public static GalleryScrollManager Instance;
-
     public GameObject itemPrefab;
     public GalleryHelper galleryHelper; // GalleryHelper 참조
 
@@ -37,9 +35,9 @@ public class GalleryScrollManager : MonoBehaviour, LoopScrollPrefabSource, LoopS
     private int gcCallThreshold = 10; // 예: 10회마다 GC 호출
     private int imageLoadCounter = 0;
 
-    private void Awake()
+    override protected void Awake()
     {
-        Instance = this;
+        base.Awake();        
 
         // SemaphoreSlim 초기화
         loadSemaphore = new SemaphoreSlim(maxConcurrentLoads, maxConcurrentLoads);
