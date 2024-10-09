@@ -1,12 +1,5 @@
 {
   "dependencies": {
-    "com.cysharp.unitask": {
-      "version": "2.5.4",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://package.openupm.com"
-    },
     "com.unity.collab-proxy": {
       "version": "2.5.2",
       "depth": 0,
@@ -152,15 +145,6 @@
       "source": "git",
       "dependencies": {},
       "hash": "51e0996359c31c9cb01cca4f5aedcd72251b2425"
-    },
-    "extensions.unity.imageloader": {
-      "version": "5.3.3",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.cysharp.unitask": "2.5.4"
-      },
-      "url": "https://package.openupm.com"
     },
     "me.qiankanglai.loopscrollrect": {
       "version": "https://github.com/qiankanglai/LoopScrollRect.git",
